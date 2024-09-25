@@ -1,0 +1,26 @@
+CREATE TABLE lead (
+    lead_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255),
+    phone VARCHAR(15),
+    email VARCHAR(255),
+    gender VARCHAR(50),
+    age VARCHAR(50),
+    alternate_phone VARCHAR(15),
+    location VARCHAR(255),
+    currently_doing ENUM('Student', 'Fresher', 'Working Professional-Technical', 'Working Professional Non-Technical', 'Other'),
+    counselling_date VARCHAR(15)
+    counselling_time TIME,
+    counselling_mode ENUM('Online', 'Offline', 'Phone Call'),
+    student_notes TEXT,
+    lead_source ENUM('IG & FB', 'Google', 'LinkedIn', 'WhatsApp', 'Organic', 'Website') NOT NULL,
+    lead_campaign VARCHAR(255),
+    lead_params VARCHAR(255),
+    background_field VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL,
+   created_by VARCHAR(255) DEFAULT 'system',
+    updated_by VARCHAR(255) DEFAULT 'system',
+    deleted_by VARCHAR(255) DEFAULT 'system'
+);
